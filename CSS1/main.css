@@ -1,0 +1,143 @@
+/* * means everything */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #426780;
+  color: coral;
+  /*
+    You can add multiple comma separated fonts
+    and those correspond to a fallback mechanism,
+    if the first font can't load.
+    */
+  font-family: Hack;
+  font-size: 26px;
+  font-weight: normal;
+  /*
+  Same as above
+  font: normal 26px Hack;
+  */
+  line-height: 1.8em;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: coral;
+}
+
+/* You can access states of a tag using this syntax */
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: black;
+}
+
+.clr {
+  clear: both;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+  /* border: 5px blue solid; */
+  /* margin-top: 20px; */
+}
+
+.box1 {
+  background-color: #333333;
+  border: 5px red solid;
+  padding: 0px 15px;
+  margin-top: 20px;
+}
+
+/* You can refer to all h1 tags in box1 this way */
+.box1 h1 {
+  font-family: Verdana;
+  font-weight: bold;
+}
+
+.box2 {
+  border: 5px solid red;
+  padding: 0px 15px;
+}
+.categories {
+  border: 5px solid grey;
+  border-radius: 15px;
+  /* padding: 0px 15px; */
+}
+.categories h2 {
+  text-align: center;
+}
+.categories ul {
+  padding: 0px;
+}
+
+.form1 .form-group {
+  margin-bottom: 15px;
+}
+
+.form1 label {
+  display: block;
+}
+
+.form1 input[type="text"],
+.form1 textarea {
+  width: 100%;
+}
+
+.block {
+  margin-top: 10px;
+  margin-right: 1%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  float: left;
+  width: 32.3%;
+  box-sizing: border-box;
+}
+
+#main-navbar {
+  margin-top: 10px;
+  float: left;
+  width: 70%;
+}
+
+.sidebar {
+  margin-top: 10px;
+  float: right;
+  width: 30%;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.pbox {
+  height: 500px;
+  width: 800px;
+  position: relative;
+  border: 1px solid black;
+  background-image: url("anesthetizeclean.jpg");
+  background-position: center top;
+  background-position: no-repeat;
+}
+
+.pbox h1 {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+}
+
+.pbox p{
+  position: absolute;
+  top: 300px;
+  left: 10px;
+}
+
+.fixme{
+  position: fixed;
+  top : 50%;
+}

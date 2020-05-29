@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Hack;
+}
+#main-header {
+  background-color: #426780;
+  color: coral;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+#navbar {
+  background-color: grey;
+  padding: 10px 0px;
+}
+
+#navbar a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+#navbar a:hover {
+  color: rgb(19, 97, 73);
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+#navbar li {
+  display: inline;
+  padding-right: 20px;
+}
+
+/* Min-Height allows the div to grow */
+#showcase {
+  min-height: 500px;
+  background-image: url(anesthetizeclean.jpg);
+  background-position: center center;
+  text-align: center;
+}
+
+#showcase h1 {
+  color: cyan;
+  font-size: 50px;
+  padding-top: 200px;
+}
+
+#main {
+  float: left;
+  width: 70%;
+}
+#sidebar {
+  background-color: grey;
+  float: right;
+  width: 30%;
+}
+
+@media (max-width: 500px) {
+  #main {
+    float: none;
+    width: 100%;
+  }
+  #sidebar {
+    float: none;
+    width: 100%;
+  }
+}
