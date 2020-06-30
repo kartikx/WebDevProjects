@@ -105,3 +105,42 @@ on the button */
     transform: translateY(10rem) rotateZ(20deg);
     opacity: 0;
 }
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 15vw;
+    background-color: white;
+}
+
+/*
+We have defined position of the select div to be relative,
+so that we can define the position of the after element,
+relative to it.
+*/
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after{
+    content: '\25BC';
+    position: absolute;
+    background-color: white;
+    color: rgb(60, 145, 224);
+    right: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after{
+    color: #07c035;
+}
