@@ -1,0 +1,46 @@
+/* TODO Add shadow to input when active */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(145deg, rgb(60, 145, 224), #07c035);
+    color: white;
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+/* Important concepts here, might need to read up */
+header,
+form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background-color: white;
+}
+
+form button {
+    color:rgb(60, 145, 224);
+    background: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+form button:hover{
+    color: #07c035;
+}
