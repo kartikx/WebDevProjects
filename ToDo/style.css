@@ -65,6 +65,7 @@ form button:hover{
     color: black;
     margin: 0.5rem;
     font-size: 1.2rem;
+    transition: all 0.3s ease;
 
     /* This makes all items jump next to each other */
     display: flex;
@@ -90,6 +91,7 @@ form button:hover{
 .check-btn:hover, .trash-btn:hover{
     color: #07c035;
 }
+
 /* These are preventing you from clicking
 on the button */
 .fa-check-square, .fa-minus-circle{
