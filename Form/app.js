@@ -38,3 +38,15 @@ function validateEmail(email){
         return false;
     }
 }
+
+function bg_error(error){
+    if (error){
+        document.body.classList.toggle('error-bg');
+    }
+}
+
+function nextSlide(parent, nextForm){
+    parent.classList.add('inactive');
+    parent.classList.remove('active');
+    nextForm.classList.add('active');
+}
