@@ -47,3 +47,19 @@ because we want only one visible at a time */
 .field-finish i{
     padding: 0.5rem
 }
+
+.inactive{
+    opacity: 0;
+    pointer-events: none;
+    /* We can't use translateY, because we've already
+    used translate once to center it. If we use translateY
+    it will translate along the original position (set using x,y)
+    this would lead to a diag. movement */
+    transform: translate(-50%, 50%);
+}
+
+.active{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%);
+}
