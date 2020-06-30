@@ -17,3 +17,24 @@ function animateForm(){
         }
     });
 }
+
+function validateUser(username){
+    if (username.length < 3){
+        bg_error(false);
+        return false;
+    }else{
+        bg_error(true);
+        return true;
+    }
+}
+
+function validateEmail(email){
+    const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (validation.test(email)){
+        bg_error(true);
+        return true;
+    }else{
+        bg_error(false);
+        return false;
+    }
+}
