@@ -73,3 +73,29 @@ function deleteTodoItem(event) {
     }   
 }
 
+function filterTodos(event) {
+    const todos = todoList.childNodes;
+    todos.forEach(function(todo){
+        switch(event.target.value){
+            case 'all':
+                todo.style.display = 'flex';
+                break;
+            case 'completed':
+                if (todo.classList.contains("completed")){
+                    // Since in CSS, the elements that do display are 'flex'
+                    todo.style.display = 'flex';
+                }else{
+                    // This set the element to not be displayed.
+                    todo.style.display = 'none';
+                }
+                break;
+            case 'todo':
+                if (!todo.classList.contains("completed")){
+                    todo.style.display = 'flex';
+                }else{
+                    todo.style.display = 'none';
+                }
+                break;
+        }
+    });
+}
