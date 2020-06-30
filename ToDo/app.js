@@ -46,3 +46,30 @@ function addTodo(event) {
     // Clear input field
     todoInput.value = "";
 }
+
+/**
+ * This will be triggered, if I click on any part of a To-Do item,
+ * which includes li, and two buttons.
+ */
+function deleteTodoItem(event) {
+    const item = event.target;
+    const todo = item.parentElement;
+    if (item.classList[0] === 'trash-btn'){
+        // This animates the todo item sort of falling away.
+        todo.classList.add("fall");
+        // Once the animation is complete, remove the Item.
+        todo.addEventListener('transitionend', function(){
+            todo.remove();
+        })
+    }
+
+    if (item.classList[0] === 'check-btn'){
+        /**
+         * Using toggle is useful here, it will add this class if it hasn't been added.
+         * Otherwise, it'll remove it. Which allows you to check and un-check using
+         * the same button.
+         */
+        todo.classList.toggle('completed')
+    }   
+}
+
