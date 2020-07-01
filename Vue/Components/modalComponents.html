@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma-rtl.css"
+            integrity="sha256-8c3iUwMTRp4NGIoybGwbQUO27Luo4DwwC27e+2IXGzM="
+            crossorigin="anonymous"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>Using components</title>
+    </head>
+    <body>
+
+<!-- 
+        Here's how we've set it up:
+        From the CSS pov, the modal is always active i.e. is-active is set.
+
+        We're going to use the v-if directive from view to control whether
+        to show the modal or not. This directive depends on a bool value
+        set within the app Vue instance.
+
+        Setting the modal visible is then easy, using the button's
+        onClick directive. However, setting it invisible, not so. 
+        This is because, the button for closing is embedded within the HTML
+        of the modal Component, and doesn't have access to this bool.
+        
+        Hence we make use of a signal, which is emitted by this button (and hence,
+        the modal itself). This is a custom signal close, which appears similar to
+        click. When this signal is emmitted, we know we should set the visibility
+        to false. 
+-->
+
+        <div id="root">
+            <modal v-if="showModal" @close="showModal=false"></modal>
+            <button type="button"   @click="showModal=true"> Show Modal </button>
+        </div>
+        <script src="modalcomponents.js"></script>
+    </body>
+</html>
