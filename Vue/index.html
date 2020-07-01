@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue</title>
+</head>
+<body style='font-family:Nunito'>
+    <div id="root">
+        <ul>
+            <li v-for='name in names'>{{name}}</li>
+        </ul>
+        <input type="text" id="input-field">
+        <button type="button" id="sub-btn">Add</button>
+    </div>
+    <script>
+        let app = new Vue({
+            el: '#root',
+            data: {
+                names: ['Kartik', 'Puneeth', 'Barua', 'Saketh']
+            }
+        });
+        document.querySelector('#sub-btn').addEventListener('click', ()=>{
+            app.names.push(document.querySelector('#input-field').value);
+            document.querySelector('#input-field').value = '';
+        });
+
+    </script>
+</body>
+</html>
+
