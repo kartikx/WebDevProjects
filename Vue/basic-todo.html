@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Todo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>
+            All Tasks
+            <ul>
+                <li v-for='task in tasks' v-text='task.desc'></li>
+            </ul>
+        </h2>
+        <h2>
+            Completed Tasks
+            <ul>
+                <li v-for='task in completed_tasks' v-text='task.desc'></li>
+            </ul>
+        </h2>
+        <h2>
+            Incomplete Tasks
+            <ul>
+                <li v-for='task in incomplete_tasks' v-text='task.desc'></li>
+            </ul>
+        </h2>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el: '#root',
+            data: {
+                tasks: [
+                {desc: 'Go to the mall', completed: false},
+                {desc: 'Drink milk', completed:false },
+                {desc: 'Drink coffee', completed:true },
+                {desc: 'Eat lunch', completed:false },
+                {desc: 'Bathed', completed:true },
+                ]
+            },
+            /**
+              * The benefit of using computed properties is that
+              * the logic inside them is computed only if the Underlying
+              * model changed. That is they're caching.
+              */
+            computed: {
+                incomplete_tasks() {
+                    return this.tasks.filter(task => !task.completed); 
+                },
+                completed_tasks() {
+                    return this.tasks.filter(task => task.completed);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
