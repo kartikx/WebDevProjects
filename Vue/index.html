@@ -11,6 +11,7 @@
         <ul>
             <li v-for='name in names'>{{name}}</li>
         </ul>
+        <input type="text" v-model='newName'>
         <button @click='addName' type="button">Add</button>
     </div>
     <script>
@@ -18,6 +19,7 @@
             el: '#root',
 
             data: {
+                newName: '',
                 names: ['Kartik', 'Puneeth', 'Barua', 'Saketh']
             },
             
