@@ -11,8 +11,7 @@
         <ul>
             <li v-for='name in names'>{{name}}</li>
         </ul>
-        <input type="text" id="input-field">
-        <button type="button" id="sub-btn">Add</button>
+        <button @click='addName' type="button">Add</button>
     </div>
     <script>
         let app = new Vue({
@@ -22,14 +21,13 @@
                 names: ['Kartik', 'Puneeth', 'Barua', 'Saketh']
             },
             
-            // This method is called when this Vue instance is ready.
-            mounted() {
-                document.querySelector('#sub-btn').addEventListener('click', ()=>{
-                    let name = document.querySelector('#input-field');
-                    app.names.push(name.value);
-                    name.value = '';
-                });
-            }
+            // All methods should go here.
+            methods: {
+                addName() {
+                    this.names.push(this.newName);
+                    this.newName = '';
+                }
+            } 
         });
 
     </script>
