@@ -17,13 +17,19 @@
     <script>
         let app = new Vue({
             el: '#root',
+
             data: {
                 names: ['Kartik', 'Puneeth', 'Barua', 'Saketh']
+            },
+            
+            // This method is called when this Vue instance is ready.
+            mounted() {
+                document.querySelector('#sub-btn').addEventListener('click', ()=>{
+                    let name = document.querySelector('#input-field');
+                    app.names.push(name.value);
+                    name.value = '';
+                });
             }
-        });
-        document.querySelector('#sub-btn').addEventListener('click', ()=>{
-            app.names.push(document.querySelector('#input-field').value);
-            document.querySelector('#input-field').value = '';
         });
 
     </script>
