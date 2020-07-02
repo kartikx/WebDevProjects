@@ -17,3 +17,29 @@ function optionChange() {
     const request = new XMLHttpRequest();
     const base = box1.value;
     const symbol = box2.value;
+
+    /**
+     * I have prevented GET requests on /convert,
+     * so that it is not accessible through
+     * a URL access.
+     */
+    request.open('POST', '/convert');
+    
+    /**
+     * This is a callback function which gets called 
+     * when the request gets loaded, i.e. is returned
+     * from Server-side.
+     */
+    request.onload = () => {
+        
+        // This converts the Request Response into a JS Object.
+        const data = JSON.parse(request.responseText);
+
+        // Success is a parameter I pass myself from Server side.
+        if (data.success) {
+            result.innerHTML = `1 ${base} is ${data.rates}${symbol}`;
+        }
+        else {
+            result.innerHTML = "There was an error"; 
+        }
+    };
