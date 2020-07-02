@@ -43,3 +43,15 @@ function optionChange() {
             result.innerHTML = "There was an error"; 
         }
     };
+
+    /**
+     * This is the logic for actually sending
+     * the request to the server.
+     */
+    const data = new FormData();
+    data.append('base', base);
+    data.append('symbol', symbol);
+    
+    request.send(data);
+    console.log("Request Sent");
+}
