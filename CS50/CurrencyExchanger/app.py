@@ -16,3 +16,14 @@ def convert():
     base   = request.form["base"]
     symbol = request.form["symbol"]
 
+    conversion_result = requests.get(f'https://api.exchangeratesapi.io/latest?base={base}&symbols={symbol}')
+
+    if conversion_result.status_code != 200 :
+        return jsonify({'success': False})
+
+    return jsonify({'success': True, 'rates': conversion_result.json()['rates'][symbol]})
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
