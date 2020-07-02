@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Currency Exchange Calculator</h2>
+    <div id="dropdown-boxes">
+        <select id="box1">
+            <option val="CAD">CAD</option>
+            <option val="EUR">EUR</option>
+            <option val="GBP">GBP</option>
+            <option val="INR">INR</option>
+            <option val="USD">USD</option>
+        </select>
+        <select id="box2">
+            <option val="CAD">CAD</option>
+            <option val="EUR">EUR</option>
+            <option val="GBP">GBP</option>
+            <option val="INR">INR</option>
+            <option val="USD">USD</option>
+        </select>
+    </div>
+    <div id="result">
+    </div>
+
+    <!-- Putting this here solves the problem of NULL objects -->
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+</body>
+</html>
