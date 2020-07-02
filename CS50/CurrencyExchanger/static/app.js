@@ -53,5 +53,4 @@ function optionChange() {
     data.append('symbol', symbol);
     
     request.send(data);
-    console.log("Request Sent");
 }
