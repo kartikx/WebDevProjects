@@ -2,9 +2,12 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
+const filterBox = document.querySelector(".filter-todos");
 
 // Event Listeners
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteTodoItem);
+filterBox.addEventListener("click", filterTodos);
 
 // Functions
 
@@ -46,6 +49,7 @@ function addTodo(event) {
     // Clear input field
     todoInput.value = "";
 }
+
 
 /**
  * This will be triggered, if I click on any part of a To-Do item,
