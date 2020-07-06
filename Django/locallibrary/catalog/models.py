@@ -28,10 +28,7 @@ class Book(models.Model):
 
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
-    language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True, help_text='Select the language for this book')
-
-    def __str__(self):
-        return self.title
+    language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True,default='eng', help_text='Select the language for this book')
 
     """
     Here book-details is the name provided in the URL mapper to the
@@ -39,8 +36,12 @@ class Book(models.Model):
     If the URL accepts arguments, you can pass those in the args
     parameter.
     """
-    def __get__absolute__url(self):
+    def get_absolute_url(self):
         return reverse('book-details', args=[str(self.id)])
+
+    def __str__(self):
+        return self.title
+
 
 
 class BookInstance(models.Model):
@@ -48,7 +49,9 @@ class BookInstance(models.Model):
     """
     By default the primary key is set to be an 
     AutoField, however you can explicitly set
-    using UUIDField.
+    using UUIDField. This would lead to an explicit
+    ID field which will appear (already populated)
+    on the Admin Page.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular book, across the whole library')
     book = models.ForeignKey(Book, on_delete=models.SET_NULL, null=True)
@@ -74,7 +77,7 @@ class BookInstance(models.Model):
         ordering = ['due_back']
     
     def __str__(self):
-        return f('{self.id} ({self.book.title})')
+        return f'{self.id} ({self.book.title})'
     
 
 class Author(models.Model):
@@ -91,7 +94,7 @@ class Author(models.Model):
         return reverse('author-details', args=[str(self.id)])
 
     def __str__(self):
-        return f('{self.first_name},{self.last_name}')
+        return f'{self.first_name} {self.last_name}'
 
 class Language(models.Model):
     LANGUAGE_LIST = (
