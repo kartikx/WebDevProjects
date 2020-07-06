@@ -13,13 +13,23 @@ Admin Classes enable adding custom functionality
 to the Admin Page for these Models.
 """
 
+class BookInline(admin.TabularInline):
+    model = Book
+    extra = 0
+
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
+    inlines = [BookInline]
     list_display = ('first_name', 'last_name', 'date_of_birth', 'date_of_death')
     fields = ('first_name', 'last_name', ('date_of_birth', 'date_of_death'))
 
+class BookInstanceInline(admin.TabularInline):
+    model = BookInstance
+    extra = 0
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
+    inlines = [BookInstanceInline]
     """
     You can't directly invoke Genre, as it is
     a many-to-many relation, and prevented by Django.
