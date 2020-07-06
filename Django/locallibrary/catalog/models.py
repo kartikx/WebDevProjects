@@ -100,12 +100,10 @@ class Language(models.Model):
         ('jap', 'Japanese')
     )
 
-    # Set up choices when working.
-    # choices=LANGUAGE_LIST,
-    # blank=True,
-    # default='eng',
-
     language = models.CharField(max_length=30,
+                choices=LANGUAGE_LIST,
+                blank=True,
+                default='eng',
                 help_text='Book language')
 
     def __str__(self):
