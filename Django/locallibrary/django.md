@@ -27,3 +27,30 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 5. To modify the appearance of the Details page (i.e. a particular row), use the fields member of the ModelAdmin class.
 
 6. Use Inlines if you wanna display Foreign Key tables.
+
+# Generic Views
+1. If you want to display a List View for your model, instead of defining a function which parses the Model and then calls a render template, you can use Generic List Based Views that do all that for you.
+2. To do this, your URL mapper doesn't map to a function but to a class method, of the type `BookListView.as_view()`.
+3. The List View renders a template at `catalog/templates/catalog/(model_name)_list.html`
+4. The templates are made available of a context which includes the rows of the table in a variable `(model_name)_list`. This is essentially the entire table, which you can then iterate over.
+5. You can modify the View implementation. You could:
+* Change the variable name of the Context.
+* Change the queryset to filter which rows get passed to template.
+* Change which template is accessed.
+5. You can also override functions in the View class. For eg. instead of defining a queryset, you could modify the `get_queryset()` method. You could also pass additional variables into the context.
+
+6. Passing variables in urls is similar to that in Flask. Where if you specify catalog/<something>, then the view will have access to the variable something.
+
+7. To get access to the Foreign Key variables from the "many" side of the relationship, you can use the _set method. For eg. to get book_instances from a book variable you would : `bookinstance_set.all`. The object name is the lowercase of the Model name. Not that whenever you call methods from HTML files, you can never invoke them, nor can you pass parameters to them.
+
+8. MDN mentions some problems you may run into if you don't provide any ordering of the model (either in the Class or in the View implementation). Can't seem to reproduce it myself, but keep in mind.
+
+9. Implementing pagination in Generic views is as easy as just adding the member `paginate_by`.
+
+# Sessions
+Django makes use of sessions to keep track of which browsers visited the site, and their previous activity. This information is accessible through the session attribute of the request available to the view as well as to the templates it renders. Sessions are present as dictionaries, which allow you to set or get any variable you want. Django uses Cookies to store session ids, however the actual information is stored in the db as it is more secure there.
+
+For most use-cases the session data in the database will get updated, however you might need to manually mark the `request.session.modified` to be true occasionally. See MDN if you face this issue.
+
+# User Authentication
+
