@@ -24,6 +24,8 @@ def index(request):
 # This searches for template in templates/catalog/book_list.html
 class BookListView(generic.ListView):
     model = Book
-    """
-    You can make changes here to: 
-    """
+    paginate_by = 2
+
+# This is passed in for a single object.
+class BookDetailsView(generic.DetailView):
+    model = Book
