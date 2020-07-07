@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+<!-- The book object is available as book -->
+{% block content %}
+    <h1> Title: {{book.title}}</h1>
+    <p><strong>Author:</strong> <a href="#">{{ book.author }}</a></p>
+    <p><strong>Summary:</strong> {{ book.summary }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p> 
+    <p><strong>Language:</strong> {{ book.language }}</p>
+    <!-- This is an example of a filter.
+    See: https://docs.djangoproject.com/en/3.0/ref/templates/language/ -->
+    <p><strong>Genre:</strong> {{ book.genre.all|join:", " }}</p> 
+
+    <div>
+        <h4>Copies:</h4>
+        {% for copy in book.bookinstance_set.all %}
+            <hr>
+            <p class="{% if copy.status == 'a' %} text-success {% elif copy.status == 'm' %} text-danger {% else %} text-warning {% endif %} ">
+                {{ copy.get_status_display }}
+            </p>
+            {% if copy.status != 'a' %}
+                <p><strong> Due to be returned by: </strong>{{copy.due_back}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
