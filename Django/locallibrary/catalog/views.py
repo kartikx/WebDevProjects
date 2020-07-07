@@ -20,3 +20,9 @@ def index(request):
 
     return render(request, 'index.html', context=context)
 
+# This searches for template in templates/catalog/book_list.html
+class BookListView(generic.ListView):
+    model = Book
+    """
+    You can make changes here to: 
+    """
