@@ -41,6 +41,10 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def display_genre(self):
+        # The [:3] restricts display to only 3 genres.
+        return ', '.join(genre.name for genre in self.genre.all()[:3])
 
 
 
