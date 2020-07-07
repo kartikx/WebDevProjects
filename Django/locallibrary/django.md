@@ -20,4 +20,10 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_websi
 
 2. Once you've set up your Models, you can register them to your local app admin.py file. Then when you log into the admin route, you'll see the models wherein you can modify contents/add new rows etc.
 
-3. Django provides a pretty nice admin page out of the box, however you can modify it if needed. To do this we make use of ModelAdmin classes. To simply change how the list for a table is displayed, we can modify the list_display field.
+3. Django provides a pretty nice admin page out of the box, however you can modify it if needed. To do this we make use of ModelAdmin classes. To simply change how the list of rows is displayed, we can modify the list_display field.
+
+4. Similarly, you can use a list_filter, to provide filters based on particular columns.
+
+5. To modify the appearance of the Details page (i.e. a particular row), use the fields member of the ModelAdmin class.
+
+6. Use Inlines if you wanna display Foreign Key tables.
