@@ -9,5 +9,6 @@ Hence all paths in this are catalog/$
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('books', BookListView.as_view(), name='books')
+    path('books', views.BookListView.as_view(), name='books'),
+    path('book/<int:pk>', views.BookDetailsView.as_view(), name='book-details'), 
 ]
