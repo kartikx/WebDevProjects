@@ -68,7 +68,6 @@ hence 2 same translations has net effect 1 only. */
     transform: translate(-50%, -50%);
 }
   
-
 .error-bg{
     background-image: linear-gradient(120deg, rgb(172, 5, 5), rgb(61, 2, 2));
 }
