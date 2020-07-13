@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito';
+}
+
+li {
+    text-decoration: cornsilk;
+    margin-left: 20px;
+}
+
+.sketch {
+    height: 50vh;
+    width: 50vmin;
+    background-color: rgb(235, 166, 178);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    font-size: 1rem;
+    background-color: rgb(58, 176, 255);
+    margin: 0.5em;
+    /* width: 25%; */
+}

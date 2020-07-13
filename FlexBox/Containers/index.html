@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FlexBox: Containers</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class= "info">
+            <h2> About FlexBox Containers</h2>
+            <ul>
+                <li>
+                    <p>
+                        To start off we have flex direction, which is by default row. It controls the direction
+                        in which your flex box grows. Changing the flex-direction may be useful, if you want
+                        to build a responsive navbar which switches to a stacked column of links when the screen
+                        is short enough.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The next property is flex wrap which is by default no wrap. This means that the 
+                        flexbox will try to fit the entire contents in a single row (if your flex direction is
+                        row). This can lead to some unwanted results such as your items not responding
+                        to the width property, because your flex-box will try to fit them closely in the row.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Flex Flow combines the two properties mentioned above. Hence you could set: 
+                        flex-flow : row nowrap.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Next we have Justify-Content. This controls the movement of items
+                        along the main axis. So if your flex-direction is row, then setting
+                        Justify-Content to "center" would aggregate all elements along
+                        that row in the center.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Align Items, on the other hand, deals with the movement of items
+                        along the cross-axis. For rows this would be the vertical direction.
+                        Note that Align Items and Justify Content work with individual rows/columns.
+                        So basically you have a "wide" row, and you're telling CSS where you want
+                        the item positioned vertically. You may position in the center of the row, at 
+                        the end, at the start etc.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Align Contents is similar to Align Items. However, it only works with multiple rows, 
+                        and will often overwrite Align Items (or vv). It also deals with movement across the cross axis,
+                        however it controls the entire group. Align-Content of Flex-End would move
+                        all the elements towards the end, wheras Align-Items of Flex-End only moves
+                        the element to the end of their respective rows.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sketch">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+
+    </body>
+</html>
