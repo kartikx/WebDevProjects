@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&family=Montserrat&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+
+h1 {
+    font-family: "Grenze Gotisch";
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 0.8em;
+}
+
+h2 {
+    font-family: "Grenze Gotisch";
+    font-weight: 500;
+}
+
+p {
+    font-family: "Montserrat";
+}
+
+section {
+    padding: 50px 0;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn{
+    position: absolute;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    transition: all ease-in-out 250ms;
+}
+
+.btn-normal {
+    background-color: rgb(39, 52, 168);
+}
+
+.btn-normal:hover{
+    background-color: rgb(39, 47, 116);
+}
+
+.btn-awesome {
+    background-color: rgb(29, 139, 103);
+    box-shadow: 1px 2px 1px black;
+}
+
+.btn-awesome:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 3px 5px black;
+}
+
+.start{
+    background-image: linear-gradient(#33268b, #5e7bdc);
+}
+
+.middle{
+    background-image: linear-gradient(#5e7bdc , #a9c1f4);
+}
+
+.end {
+    background-image: linear-gradient(#a9c1f4 , #86d4be);
+}
