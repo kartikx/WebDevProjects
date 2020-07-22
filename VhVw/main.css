@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(to right, #b6f7fe, #86a8d0);
+    font-family: "Nunito";
+}
+
+h1 {
+    color: #4880b0;
+}
+
+p {
+    color: #578696;
+}
+
+.row {
+    display: flex;
+    align-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.col {
+    /* flex: 1; */
+}
+
+.col img {
+    height: 45vh;
+    width: 40vh;
+    border-radius: 5px;
+    object-fit: none;
+}
