@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #353535;
+    font-family: 'Raleway';
+    color: #c4c4c4;
+}
+
+.sidebar {
+    background-color: #4f4f4f;
+    padding: 1.6em;
+}
+
+.logo {
+}
+
+.logo span{
+    text-transform: uppercase;
+    font-weight: 530;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #737373;
+    padding: 1.6em;
+}
+
+.active{
+    color: #c4c4c4;
+}
+
+.main-content{
+    padding: 5%;
+    height: 100vh;
+}
+/*
+Use fractions instead of hardcoding pixels.
+* Try the 80/20 split.
+*/
+.portfolio {
+    height: 100%; 
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
+    border: 2px solid orange;
+}
+
+.portfolio-item {
+    background-color: #f96855;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 550;
+    text-transform: lowercase;
+}
+
+.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.large {
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+.small {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+.tall {
+    grid-row: span 4;
+    grid-column: span 2;
+}
+
+.wide{
+    grid-row: span 2;
+    grid-column: span 3;
+}

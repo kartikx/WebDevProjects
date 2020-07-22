@@ -1,0 +1,90 @@
+* {
+    font-family: 'Nunito';
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: [page-start]1fr [content-start]60vw [content-end]1fr [page-end];
+    grid-template-rows: [hero-start]50vh [section-start]4em [hero-end]4em [section-end]auto [bottom];
+}
+
+.section-1 {
+    background-image: url('nature.jpg');
+
+    background-color: rgb(93, 90, 90);
+    background-blend-mode: overlay;
+    background-size: cover;
+
+    grid-column: page-start / page-end;
+    grid-row: hero-start / hero-end;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.section-1 h1{
+    font-size: 1.6rem;
+}
+
+.section-1 p{
+    font-weight: 650;
+    font-size: 1.2rem;
+}
+
+.section-2 {
+    grid-column: content-start / content-end;
+    grid-row: section-start / section-end;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    background-image: linear-gradient(to right, rgb(43, 94, 190), rgb(23, 199, 105));
+    z-index: 10;
+    border-radius: 0.8rem;
+}
+
+.section-3 {
+    background-image: url('recycle.webp');
+    background-size: cover;
+    grid-column: page-start / page-end;
+    grid-row: hero-end / bottom;
+    padding: 150px 0px;
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+.section-container {
+    padding: 2em 0;
+    grid-column: content-start / content-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-container h1{
+    color: white;
+}
+
+.section-container a{
+    height: 3em;
+    width: 10em;
+    font-size: 1.2rem;
+    line-height: 3.6rem;
+    text-align: center;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgb(39, 192, 39), rgb(7, 148, 38));
+    border-radius: 10em;
+    transition: all ease-in-out 250ms;
+    color: black;
+}
+
+.section-container a:hover{
+    color: white;
+    transform: translateY(-2px);
+}

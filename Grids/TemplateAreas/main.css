@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps");
+body {
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1a1616;
+  line-height: 1.6;
+  margin: 0;
+  /*
+    The entire layout of the web-page
+    has been setup using Grid.
+    */
+  display: -ms-grid;
+  display: grid;
+  grid-template: "header header header header" 10em "hero hero hero hero" 50vh ". main sidebar ." auto "footer footer footer footer" 10em/1fr minmax(25em, 5fr) minmax(15em, 2fr) 1fr;
+  gap: 0 1.5em;
+}
+
+header,
+footer {
+  grid-area: header;
+  background-color: #1a1616;
+  font-family: "Six Caps", sans-serif;
+  font-size: 2.875rem;
+  color: #ca1092;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero {
+  grid-area: hero;
+  background-image: url("herobg.webp");
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-family: "Six Caps", sans-serif;
+  font-size: 2.875rem;
+  color: #fff;
+}
+
+main {
+  grid-area: main;
+}
+
+aside {
+  grid-area: sidebar;
+  background: #e8e8e8;
+  padding: 1.5em;
+  margin: 1.5em 0em;
+}
+
+aside .title {
+  font-family: "Merriweather", serif;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #1a1616;
+  margin-top: 0;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.blog-posts-header {
+  border-bottom: 0.8px solid #e8e8e8;
+  font-family: "Merriweather", serif;
+  font-size: 2.875rem;
+  font-weight: 500;
+  color: #1a1616;
+}
+
+.post {
+  display: -ms-grid;
+  display: grid;
+  grid-template: "img title" -webkit-min-content "img content" auto / 1fr 3fr;
+  grid-template: "img title" min-content "img content" auto / 1fr 3fr;
+  -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+  margin: 1.5em 0em;
+  padding: 1em;
+  gap: 0em 0.5em;
+}
+
+.post-img {
+  grid-area: img;
+  max-width: 100%;
+}
+
+.post-title {
+  grid-area: title;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: "Merriweather", serif;
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #1a1616;
+}
+
+.post-content {
+  grid-area: content;
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1a1616;
+}
+
+.post-content a {
+  text-decoration: none;
+  color: #ca1092;
+}
+
+.post-content a:hover {
+  color: #670c74;
+}
+/*# sourceMappingURL=main.css.map */

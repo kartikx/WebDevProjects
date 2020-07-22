@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps");
+
+$ff-base: "Merriweather", serif;
+$ff-alt: "Six Caps", sans-serif;
+
+$fs-base: 1rem;
+$fs-h1: 3rem;
+$fs-h2: 2.875rem;
+$fs-h3: 2.25rem;
+$fs-xl: 6rem;
+
+$black: #1a1616;
+$pink: #ca1092;
+$light-grey: #c2c2c2;
+$dark-grey: #e8e8e8;
+$white: #fff;
+
+@mixin font-base($font-size: $fs-base, $font-weight: 300, $color: $black) {
+    font : {
+        family: $ff-base;
+        size: $font-size;
+        weight: $font-weight;
+    }
+    color: $color;
+}
+
+@mixin font-alt($font-size: $fs-base, $color: $black) {
+    font : {
+        family: $ff-alt;
+        size: $font-size;
+    }
+    color: $color;
+}
+
+body {
+    @include font-base;
+    line-height: 1.6;
+    margin: 0;
+
+    /*
+    The entire layout of the web-page
+    has been setup using Grid.
+    */
+    display: grid;
+    grid-template:
+        "header header header header" 10em
+        "hero hero hero hero" 50vh
+        ". main sidebar ." auto
+        "footer footer footer footer" 10em
+        / 1fr minmax(25em , 5fr) minmax(15em, 2fr) 1fr;
+    gap: 0 1.5em;
+}
+
+header,
+footer {
+    grid-area: header;
+
+    background-color: $black;
+    @include font-alt($fs-h2, $pink);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    grid-area: hero;
+
+    background-image: url("herobg.webp");
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $white;
+    @include font-alt($fs-h2, $white);
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: sidebar;
+    background: $dark-grey;
+    padding: 1.5em;
+    margin: 1.5em 0em;
+
+    .title{
+        @include font-base($fs-h3);
+        margin-top: 0;
+    }
+}
+
+footer {
+    grid-area: footer;
+}
+
+.blog-posts-header{
+    border-bottom: 0.8px solid $dark-grey;
+    @include font-base($fs-h2, 500)
+}
+
+.post {
+    display: grid;
+    grid-template:
+        "img title" min-content
+        "img content" auto
+        / 1fr 3fr;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
+    margin: 1.5em 0em;
+    padding: 1em;
+    gap: 0em 0.5em;
+}
+
+.post-img {
+    grid-area: img;
+    max-width: 100%;
+}
+
+.post-title {
+    grid-area: title;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    @include font-base($fs-h3)
+}
+
+.post-content {
+    grid-area: content;
+    @include font-base();
+    a {
+        text-decoration: none;
+        color: $pink;
+    
+        &:hover{
+            color: rgb(103, 12, 116);
+        }    
+    }
+}
